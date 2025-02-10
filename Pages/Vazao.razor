@@ -1,0 +1,28 @@
+﻿@page "/vazao"
+@inherits VazaoComponent
+
+
+<PageTitle>Index</PageTitle>
+
+<div class="min-vh-100 d-flex align-items-center justify-content-center" style="padding: 1rem">
+  <Card Style="padding: 1rem; width: 100%; max-width: 500px;">
+    <CardBody>
+      <CardTitle Style="font-weight: bold;">Vazão</CardTitle>
+      <CardText>Valor de vazão em m<sup>3</sup>/s.</CardText>
+
+      <div class="d-flex flex-row mb-3">
+          <RangeInput Color="BadgeColor.Dark" TValue="int" @bind-Value="amount1" @oninput="UpdateValue" Min="0" Max="100" />
+          <Badge Color="BadgeColor.Dark" Class="ms-2" VisuallyHiddenText="amount1">@amount1</Badge>
+      </div>
+
+      <div class="d-flex justify-content-center">
+        <Button Color="ButtonColor.Dark" To="#" Type="ButtonType.Link" @onclick="SendVazaoData">Enviar</Button>
+      </div>
+    </CardBody>
+  </Card>
+</div>
+
+@code {
+  int amount1 = 10;
+}
+
